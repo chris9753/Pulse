@@ -58,7 +58,7 @@ export function EmailTemplate({ subject, content, fromEmail = "Pulse@manishtaman
   );
 }
 
-export function EmailPreview({ subject, content, fromEmail = "Pulse@yourdomain.com" }: EmailTemplateProps) {
+export function EmailPreview({ subject, content, fromEmail = "Pulse@manishtamang.com" }: EmailTemplateProps) {
   return (
     <div className="border border-gray-200 rounded-lg bg-white">
       <div className="border-b border-gray-100 p-4">
