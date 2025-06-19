@@ -2,6 +2,14 @@
 
 A modern Pulse management platform built with Next.js and integrated with Resend.com for reliable email delivery.
 
+## Screenshots
+
+Integrated editor and app screens:
+
+![Integrated with Unlayer Editor](./public/screenzy-1758092241948.png)
+
+![Newsletter Pro built with Next.js and Resend](./public/screenzy-1758092099337.png)
+
 ## Features
 
 - 📧 **Email Campaigns**: Create and send beautiful Pulses
