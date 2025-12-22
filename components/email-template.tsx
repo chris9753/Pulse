@@ -7,7 +7,7 @@ interface EmailTemplateProps {
   replyTo?: string;
 }
 
-export function EmailTemplate({ subject, content, fromEmail = "Pulse@manishtamang.com", replyTo }: EmailTemplateProps) {
+export function EmailTemplate({ subject, content, fromEmail = "Pulse@chris.tech", replyTo }: EmailTemplateProps) {
   return (
     <div className="max-w-2xl mx-auto bg-white border border-gray-200 rounded-lg shadow-sm">
       {/* Email Header */}
@@ -58,7 +58,7 @@ export function EmailTemplate({ subject, content, fromEmail = "Pulse@manishtaman
   );
 }
 
-export function EmailPreview({ subject, content, fromEmail = "Pulse@manishtamang.com" }: EmailTemplateProps) {
+export function EmailPreview({ subject, content, fromEmail = "Pulse@chris.tech" }: EmailTemplateProps) {
   return (
     <div className="border border-gray-200 rounded-lg bg-white">
       <div className="border-b border-gray-100 p-4">
