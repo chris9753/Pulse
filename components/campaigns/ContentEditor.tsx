@@ -49,7 +49,7 @@ export function ContentEditor({ useRawHtml, setUseRawHtml, rawHtml, setRawHtml, 
           <div className="border border-gray-200 rounded-lg bg-white">
             <div className="border-b border-gray-100 p-6">
               <div className="font-medium text-lg">{subject || "Email Subject"}</div>
-              <div className="text-gray-500 text-sm mt-1">from Pulse@manishtamang.com</div>
+              <div className="text-gray-500 text-sm mt-1">from Pulse@chris.tech</div>
             </div>
             <div className="p-6">
               {previewHtml ? (
