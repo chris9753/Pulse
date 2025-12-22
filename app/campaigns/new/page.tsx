@@ -104,7 +104,7 @@ export default function NewCampaignPage() {
         title,
         subject,
         content: getFinalContent(),
-        fromEmail: "Pulse@manishtamang.com",
+        fromEmail: "Pulse@chris.tech",
       })
 
       const result = await sendCampaign({
@@ -112,7 +112,7 @@ export default function NewCampaignPage() {
         subject,
         content: getFinalContent(),
         subscribers: activeSubscriberEmails,
-        fromEmail: "Pulse@manishtamang.com",
+        fromEmail: "Pulse@chris.tech",
       })
 
       if (result.success) {
@@ -156,7 +156,7 @@ export default function NewCampaignPage() {
         title,
         subject,
         content: getFinalContent(),
-        fromEmail: "Pulse@manishtamang.com",
+        fromEmail: "Pulse@chris.tech",
       })
 
       toast({
