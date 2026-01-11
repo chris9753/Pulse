@@ -68,9 +68,9 @@ export function HtmlCodeEditor({ value, onChange, placeholder, className }: Html
   }
 
   return (
-    <div className={`space-y-2 ${className} ${isFullScreen ? 'fixed inset-0 z-50 bg-white dark:bg-gray-900 p-4' : ''}`}>
+    <div className={`space-y-2 ${className} ${isFullScreen ? "fixed inset-0 z-50 bg-background p-4" : ""}`}>
       <div className="flex items-center justify-between">
-        <Label htmlFor="html-editor" className="text-gray-700 dark:text-gray-300">
+        <Label htmlFor="html-editor" className="text-foreground">
           HTML Content
         </Label>
         <div className="flex items-center gap-2">
@@ -82,7 +82,7 @@ export function HtmlCodeEditor({ value, onChange, placeholder, className }: Html
             className={`text-xs transition-all duration-200 ${
               isFormatted 
                 ? 'bg-green-50 border-green-200 text-green-700 hover:bg-green-100 dark:bg-green-900/20 dark:border-green-800 dark:text-green-400' 
-                : 'hover:bg-gray-50 dark:hover:bg-gray-800'
+                : 'hover:bg-muted/50 dark:hover:bg-primary/90'
             }`}
             title={isFormatted ? "Double-click to undo format" : "Format HTML code"}
           >
@@ -105,7 +105,7 @@ export function HtmlCodeEditor({ value, onChange, placeholder, className }: Html
         </div>
       </div>
       
-      <div className={`border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden ${
+      <div className={`overflow-hidden rounded-md border border-border ${
         isFullScreen ? 'h-[calc(100vh-120px)]' : 'h-full'
       }`}>
         <CodeMirror
@@ -152,7 +152,7 @@ export function HtmlCodeEditor({ value, onChange, placeholder, className }: Html
         />
       </div>
       
-      <p className="text-sm text-gray-500 dark:text-gray-400">
+      <p className="text-sm text-muted-foreground dark:text-muted-foreground">
         Write your complete HTML email template. You can use variables like {"{{name}}"} which will be replaced automatically.
       </p>
     </div>

@@ -208,7 +208,7 @@ export default function SubscribersPage() {
       {/* Header */}
       <div className="space-y-4">
         <h1 className="text-4xl font-medium tracking-tight">Subscribers</h1>
-        <p className="text-lg text-gray-600 max-w-2xl">
+        <p className="text-lg text-muted-foreground max-w-2xl">
           Manage your Pulse subscribers, track engagement, and organize your audience into targeted segments for
           better campaign performance.
         </p>
@@ -232,7 +232,7 @@ export default function SubscribersPage() {
           </Button>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">{contacts.length} total subscribers</span>
+            <span className="text-sm text-muted-foreground">{contacts.length} total subscribers</span>
           </div>
         </div>
       </div>
@@ -251,39 +251,39 @@ export default function SubscribersPage() {
 
       {/* Quick Stats */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">OVERVIEW</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">OVERVIEW</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-2">
             <div className="text-3xl font-medium">{contacts.length}</div>
-            <div className="text-gray-600">Total Subscribers</div>
+            <div className="text-muted-foreground">Total Subscribers</div>
             <div className="flex items-center gap-1 text-sm">
               <TrendingUp className="h-3 w-3 text-green-600" />
               <span className="text-green-600">+{contacts.length > 0 ? "12" : "0"}</span>
-              <span className="text-gray-500">this week</span>
+              <span className="text-muted-foreground">this week</span>
             </div>
           </div>
 
           <div className="space-y-2">
             <div className="text-3xl font-medium">{activeContacts.length}</div>
-            <div className="text-gray-600">Active</div>
-            <div className="text-sm text-gray-500">
+            <div className="text-muted-foreground">Active</div>
+            <div className="text-sm text-muted-foreground">
               {contacts.length > 0 ? `${((activeContacts.length / contacts.length) * 100).toFixed(1)}% of total` : "0% of total"}
             </div>
           </div>
 
           <div className="space-y-2">
             <div className="text-3xl font-medium">{unsubscribedContacts.length}</div>
-            <div className="text-gray-600">Unsubscribed</div>
-            <div className="text-sm text-gray-500">
+            <div className="text-muted-foreground">Unsubscribed</div>
+            <div className="text-sm text-muted-foreground">
               {contacts.length > 0 ? `${((unsubscribedContacts.length / contacts.length) * 100).toFixed(1)}% of total` : "0% of total"}
             </div>
           </div>
 
           <div className="space-y-2">
             <div className="text-3xl font-medium">{audiences.length}</div>
-            <div className="text-gray-600">Audiences</div>
-            <div className="text-sm text-gray-500">Available lists</div>
+            <div className="text-muted-foreground">Audiences</div>
+            <div className="text-sm text-muted-foreground">Available lists</div>
           </div>
         </div>
       </div>
@@ -291,12 +291,12 @@ export default function SubscribersPage() {
       {/* Search and Subscribers List */}
       <div className="space-y-8">
           <div className="flex items-center justify-between">
-          <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">ALL SUBSCRIBERS</h2>
+          <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">ALL SUBSCRIBERS</h2>
           <div className="relative max-w-sm">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   placeholder="Search subscribers..."
-              className="pl-10 border-0 bg-gray-50 focus-visible:ring-0 focus-visible:ring-offset-0"
+              className="pl-10 border-0 bg-muted focus-visible:ring-0 focus-visible:ring-offset-0"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -305,9 +305,9 @@ export default function SubscribersPage() {
 
         {filteredContacts.length === 0 ? (
           <div className="text-center py-12">
-            <Search className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">No subscribers found</h3>
-            <p className="text-gray-600">
+            <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+            <h3 className="text-lg font-medium text-foreground mb-2">No subscribers found</h3>
+            <p className="text-muted-foreground">
               {searchTerm ? "Try adjusting your search terms" : "Add your first subscriber to get started"}
             </p>
           </div>
@@ -317,7 +317,7 @@ export default function SubscribersPage() {
               {paginatedContacts.map((contact) => (
                 <div
                   key={contact.id}
-                  className="flex items-center justify-between py-6 border-b border-gray-100 last:border-b-0"
+                  className="flex items-center justify-between py-6 border-b border-border last:border-b-0"
                 >
                   <div className="space-y-2">
                     <div className="font-medium text-lg">
@@ -326,11 +326,11 @@ export default function SubscribersPage() {
                         : contact.email
                       }
                     </div>
-                    <div className="text-gray-600">{contact.email}</div>
-                    <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <div className="text-muted-foreground">{contact.email}</div>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <span
                         className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          !contact.unsubscribed ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-700"
+                          !contact.unsubscribed ? "bg-green-100 text-green-700" : "bg-muted text-foreground"
                         }`}
                       >
                         {!contact.unsubscribed ? "Active" : "Unsubscribed"}
@@ -352,12 +352,12 @@ export default function SubscribersPage() {
                   <div className="text-right space-y-1">
                     <div
                       className={`text-sm font-medium ${
-                        !contact.unsubscribed ? "text-green-600" : "text-gray-600"
+                        !contact.unsubscribed ? "text-green-600" : "text-muted-foreground"
                       }`}
                     >
                       {!contact.unsubscribed ? "Active" : "Unsubscribed"} Subscriber
                     </div>
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-muted-foreground">
                       {!contact.unsubscribed ? "Receiving emails" : "Not receiving emails"}
                     </div>
                   </div>
@@ -368,7 +368,7 @@ export default function SubscribersPage() {
             {/* Pagination */}
             {filteredContacts.length > ITEMS_PER_PAGE && (
               <div className="flex items-center justify-between pt-6">
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-muted-foreground">
                   Showing {startIndex + 1} to {Math.min(endIndex, filteredContacts.length)} of {filteredContacts.length} subscribers
                 </div>
                 <Pagination>
@@ -403,8 +403,8 @@ export default function SubscribersPage() {
       </div>
 
       {/* Footer */}
-      <div className="pt-8 border-t border-gray-100">
-        <div className="text-sm text-gray-500">
+      <div className="pt-8 border-t border-border">
+        <div className="text-sm text-muted-foreground">
           Last updated:{" "}
           {new Date().toLocaleTimeString("en-US", {
             hour: "2-digit",

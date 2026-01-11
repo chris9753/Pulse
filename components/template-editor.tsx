@@ -102,7 +102,7 @@ export function TemplateEditor({ template, onSave, onCancel, loading = false }: 
           <Button 
             onClick={handleSave} 
             disabled={loading || !name.trim() || isCapturingScreenshot}
-            className="bg-black text-white hover:bg-gray-800 rounded-full px-6"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6"
           >
             <Save className="mr-2 h-4 w-4" />
             {loading ? "Saving..." : isCapturingScreenshot ? "Capturing..." : "Save Template"}
@@ -113,39 +113,39 @@ export function TemplateEditor({ template, onSave, onCancel, loading = false }: 
       <div className="grid gap-8 md:grid-cols-3">
         {/* Template Details */}
         <div className="md:col-span-1 space-y-6">
-          <Card className="border border-gray-200">
+          <Card className="border border-border">
             <CardHeader>
               <CardTitle className="text-lg font-medium">Template Details</CardTitle>
-              <CardDescription className="text-gray-600">Basic information about your template</CardDescription>
+              <CardDescription className="text-muted-foreground">Basic information about your template</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-medium text-gray-700">Template Name *</Label>
+                <Label htmlFor="name" className="text-sm font-medium text-foreground">Template Name *</Label>
                 <Input
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Enter template name"
-                  className="border-gray-300 focus:border-black focus:ring-black"
+                  className="border-border focus:border-ring focus:ring-ring"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="description" className="text-sm font-medium text-gray-700">Description</Label>
+                <Label htmlFor="description" className="text-sm font-medium text-foreground">Description</Label>
                 <Textarea
                   id="description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Describe your template"
                   rows={3}
-                  className="border-gray-300 focus:border-black focus:ring-black"
+                  className="border-border focus:border-ring focus:ring-ring"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="category" className="text-sm font-medium text-gray-700">Category</Label>
+                <Label htmlFor="category" className="text-sm font-medium text-foreground">Category</Label>
                 <Select value={category} onValueChange={setCategory}>
-                  <SelectTrigger className="border-gray-300 focus:border-black focus:ring-black">
+                  <SelectTrigger className="border-border focus:border-ring focus:ring-ring">
                     <SelectValue placeholder="Select category" />
                   </SelectTrigger>
                   <SelectContent>
@@ -161,20 +161,20 @@ export function TemplateEditor({ template, onSave, onCancel, loading = false }: 
               </div>
 
               <div className="space-y-2">
-                <Label className="text-sm font-medium text-gray-700">Editor Type</Label>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                <Label className="text-sm font-medium text-foreground">Editor Type</Label>
+                <div className="flex items-center space-x-3 p-3 bg-muted rounded-lg">
                   <div className="flex items-center space-x-2">
-                    <Type className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm text-gray-600">Rich Text</span>
+                    <Type className="h-4 w-4 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">Rich Text</span>
                   </div>
                   <Switch
                     checked={isHtml}
                     onCheckedChange={setIsHtml}
-                    className="data-[state=checked]:bg-black"
+                    className="data-[state=checked]:bg-primary"
                   />
                   <div className="flex items-center space-x-2">
-                    <Code className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm text-gray-600">Raw HTML</span>
+                    <Code className="h-4 w-4 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">Raw HTML</span>
                   </div>
                 </div>
               </div>
@@ -182,30 +182,30 @@ export function TemplateEditor({ template, onSave, onCancel, loading = false }: 
           </Card>
 
           {template && (
-            <Card className="border border-gray-200">
+            <Card className="border border-border">
               <CardHeader>
                 <CardTitle className="text-lg font-medium">Template Info</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Category:</span>
-                  <Badge variant="outline" className="bg-gray-100 text-gray-700">{category}</Badge>
+                  <span className="text-sm text-muted-foreground">Category:</span>
+                  <Badge variant="outline" className="bg-muted text-foreground">{category}</Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Created:</span>
-                  <span className="text-sm text-gray-900">
+                  <span className="text-sm text-muted-foreground">Created:</span>
+                  <span className="text-sm text-foreground">
                     {new Date(template.createdAt).toLocaleDateString()}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Last Modified:</span>
-                  <span className="text-sm text-gray-900">
+                  <span className="text-sm text-muted-foreground">Last Modified:</span>
+                  <span className="text-sm text-foreground">
                     {new Date(template.updatedAt).toLocaleDateString()}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Usage:</span>
-                  <span className="text-sm text-gray-900">{template.usage} times</span>
+                  <span className="text-sm text-muted-foreground">Usage:</span>
+                  <span className="text-sm text-foreground">{template.usage} times</span>
                 </div>
               </CardContent>
             </Card>
@@ -214,10 +214,10 @@ export function TemplateEditor({ template, onSave, onCancel, loading = false }: 
 
         {/* Content Editor */}
         <div className="md:col-span-2">
-          <Card className="border border-gray-200">
+          <Card className="border border-border">
             <CardHeader>
               <CardTitle className="text-lg font-medium">Template Content</CardTitle>
-              <CardDescription className="text-gray-600">
+              <CardDescription className="text-muted-foreground">
                 {isHtml 
                   ? "Write your HTML email template" 
                   : "Create your template content with our rich text editor"
@@ -227,15 +227,15 @@ export function TemplateEditor({ template, onSave, onCancel, loading = false }: 
             <CardContent>
               {isHtml ? (
                 <div className="space-y-2">
-                  <Label htmlFor="content" className="text-sm font-medium text-gray-700">HTML Content</Label>
+                  <Label htmlFor="content" className="text-sm font-medium text-foreground">HTML Content</Label>
                   <Textarea
                     id="content"
                     placeholder="<html><body><h1>Your HTML content here...</h1></body></html>"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                    className="min-h-[400px] font-mono text-sm border-gray-300 focus:border-black focus:ring-black"
+                    className="min-h-[400px] font-mono text-sm border-border focus:border-ring focus:ring-ring"
                   />
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-muted-foreground">
                     Write your complete HTML email template. You can use variables like {"{{name}}"} which will be replaced automatically.
                   </p>
                 </div>
@@ -246,7 +246,7 @@ export function TemplateEditor({ template, onSave, onCancel, loading = false }: 
                     onContentChange={(html) => setContent(html)}
                     className="w-full"
                   />
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-muted-foreground">
                     Use the drag-and-drop editor to create your email template. Variables like {"{{name}}"} will be replaced automatically.
                   </p>
                 </div>
@@ -272,19 +272,19 @@ export function TemplateEditor({ template, onSave, onCancel, loading = false }: 
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
-            <div className="border border-gray-200 rounded-lg bg-white">
-              <div className="border-b border-gray-100 p-4">
-                <div className="font-medium text-gray-900">{name || "Template Name"}</div>
-                <div className="text-gray-500 text-xs mt-1">from Pulse@chris.tech</div>
+            <div className="border border-border rounded-lg bg-card">
+              <div className="border-b border-border p-4">
+                <div className="font-medium text-foreground">{name || "Template Name"}</div>
+                <div className="text-muted-foreground text-xs mt-1">from Pulse@chris.tech</div>
               </div>
               <div className="p-6">
                 {getPreviewContent() ? (
                   <div
-                    className="prose prose-lg max-w-none text-gray-900"
+                    className="prose prose-lg prose-invert max-w-none"
                     dangerouslySetInnerHTML={{ __html: getPreviewContent() }}
                   />
                 ) : (
-                  <p className="text-gray-500 italic">Your template content will appear here...</p>
+                  <p className="text-muted-foreground italic">Your template content will appear here...</p>
                 )}
               </div>
             </div>

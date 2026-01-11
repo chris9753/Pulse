@@ -181,27 +181,27 @@ export default function TemplateDetailPage() {
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Category:</span>
+                      <span className="text-sm text-muted-foreground">Category:</span>
                       <span className="text-sm font-medium">{template.category}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Created:</span>
+                      <span className="text-sm text-muted-foreground">Created:</span>
                       <span className="text-sm font-medium">
                         {new Date(template.createdAt).toLocaleDateString()}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Last Modified:</span>
+                      <span className="text-sm text-muted-foreground">Last Modified:</span>
                       <span className="text-sm font-medium">
                         {new Date(template.updatedAt).toLocaleDateString()}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Usage:</span>
+                      <span className="text-sm text-muted-foreground">Usage:</span>
                       <span className="text-sm font-medium">{template.usage} times</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Type:</span>
+                      <span className="text-sm text-muted-foreground">Type:</span>
                       <span className="text-sm font-medium">
                         {template.isHtml ? "Raw HTML" : "Rich Text"}
                       </span>
@@ -219,19 +219,19 @@ export default function TemplateDetailPage() {
                   <CardDescription>How your template will appear in emails</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="border border-gray-200 rounded-lg bg-white">
-                    <div className="border-b border-gray-100 p-4">
-                      <div className="font-medium text-gray-900">{template.name}</div>
-                      <div className="text-gray-500 text-xs mt-1">from Pulse@chris.tech</div>
+                  <div className="border border-border rounded-lg bg-card">
+                    <div className="border-b border-border p-4">
+                      <div className="font-medium text-foreground">{template.name}</div>
+                      <div className="text-muted-foreground text-xs mt-1">from Pulse@chris.tech</div>
                     </div>
                     <div className="p-6">
                       {template.content ? (
                         <div
-                          className="prose prose-lg max-w-none text-gray-900"
+                          className="prose prose-lg prose-invert max-w-none"
                           dangerouslySetInnerHTML={{ __html: template.content }}
                         />
                       ) : (
-                        <p className="text-gray-500 italic">No content available...</p>
+                        <p className="text-muted-foreground italic">No content available...</p>
                       )}
                     </div>
                   </div>

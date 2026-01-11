@@ -7,50 +7,34 @@ interface Props {
   campaignsSent: number
 }
 
+const metrics = [
+  { key: "subscribers", label: "Total Subscribers", trend: "+12%" },
+  { key: "sent", label: "Campaigns Sent", trend: "+3" },
+  { key: "open", label: "Average Open Rate", trend: "+2.1%" },
+  { key: "click", label: "Click Rate", trend: "+0.5%" },
+] as const
+
 export function OverviewCards({ totalSubscribers, campaignsSent }: Props) {
+  const values: Record<string, string | number> = {
+    subscribers: totalSubscribers.toLocaleString(),
+    sent: campaignsSent,
+    open: "24.8%",
+    click: "3.2%",
+  }
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div className="space-y-2">
-        <div className="text-3xl font-medium">{totalSubscribers.toLocaleString()}</div>
-        <div className="text-gray-600">Total Subscribers</div>
-        <div className="flex items-center gap-1 text-sm">
-          <TrendingUp className="h-3 w-3 text-green-600" />
-          <span className="text-green-600">+12%</span>
-          <span className="text-gray-500">this month</span>
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {metrics.map((metric) => (
+        <div key={metric.key} className="gradient-card">
+          <div className="text-3xl font-semibold tracking-tight">{values[metric.key]}</div>
+          <div className="mt-1 text-sm text-muted-foreground">{metric.label}</div>
+          <div className="mt-3 flex items-center gap-1 text-sm">
+            <TrendingUp className="h-3.5 w-3.5 text-emerald-400" />
+            <span className="font-medium text-emerald-400">{metric.trend}</span>
+            <span className="text-muted-foreground">this month</span>
+          </div>
         </div>
-      </div>
-
-      <div className="space-y-2">
-        <div className="text-3xl font-medium">{campaignsSent}</div>
-        <div className="text-gray-600">Campaigns Sent</div>
-        <div className="flex items-center gap-1 text-sm">
-          <TrendingUp className="h-3 w-3 text-green-600" />
-          <span className="text-green-600">+3</span>
-          <span className="text-gray-500">this month</span>
-        </div>
-      </div>
-
-      <div className="space-y-2">
-        <div className="text-3xl font-medium">24.8%</div>
-        <div className="text-gray-600">Average Open Rate</div>
-        <div className="flex items-center gap-1 text-sm">
-          <TrendingUp className="h-3 w-3 text-green-600" />
-          <span className="text-green-600">+2.1%</span>
-          <span className="text-gray-500">this month</span>
-        </div>
-      </div>
-
-      <div className="space-y-2">
-        <div className="text-3xl font-medium">3.2%</div>
-        <div className="text-gray-600">Click Rate</div>
-        <div className="flex items-center gap-1 text-sm">
-          <TrendingUp className="h-3 w-3 text-green-600" />
-          <span className="text-green-600">+0.5%</span>
-          <span className="text-gray-500">this month</span>
-        </div>
-      </div>
+      ))}
     </div>
   )
 }
-
-

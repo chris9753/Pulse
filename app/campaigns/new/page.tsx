@@ -190,27 +190,27 @@ export default function NewCampaignPage() {
 
       {/* Tabs */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">CAMPAIGN SETUP</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">CAMPAIGN SETUP</h2>
 
         <Tabs defaultValue="campaign" className="space-y-8">
           <TabsList className="grid w-full grid-cols-3 max-w-md bg-transparent p-0 h-auto">
             <TabsTrigger
               value="campaign"
-              className="flex items-center gap-2 px-4 py-3 border border-gray-200 rounded-lg data-[state=active]:border-black data-[state=active]:bg-black data-[state=active]:text-white bg-white"
+              className="flex items-center gap-2 px-4 py-3 border border-border rounded-lg data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground bg-card"
             >
               <MdCampaign className="h-6 w-6" />
               Campaign
             </TabsTrigger>
             <TabsTrigger
               value="content"
-              className="flex items-center gap-2 px-4 py-3 border border-gray-200 rounded-lg data-[state=active]:border-black data-[state=active]:bg-black data-[state=active]:text-white bg-white ml-2"
+              className="flex items-center gap-2 px-4 py-3 border border-border rounded-lg data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground bg-card ml-2"
             >
               <FileText className="h-4 w-4" />
               Content
             </TabsTrigger>
             <TabsTrigger
               value="archive"
-              className="flex items-center gap-2 px-4 py-3 border border-gray-200 rounded-lg data-[state=active]:border-black data-[state=active]:bg-black data-[state=active]:text-white bg-white ml-2"
+              className="flex items-center gap-2 px-4 py-3 border border-border rounded-lg data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground bg-card ml-2"
             >
               <Archive className="h-4 w-4" />
               Settings
@@ -229,10 +229,10 @@ export default function NewCampaignPage() {
                   disabled={isLoading || !testEmail || !subject || !getFinalContent()}
                   onSendTest={handleSendTest}
                 />
-                <div className="pt-8 border-t border-gray-100">
+                <div className="pt-8 border-t border-border">
                   <div className="space-y-2">
                     <div className="text-sm font-medium">Campaign Status</div>
-                    <div className="text-sm text-gray-500">Draft - Not sent</div>
+                    <div className="text-sm text-muted-foreground">Draft - Not sent</div>
                   </div>
                 </div>
               </div>
@@ -258,8 +258,8 @@ export default function NewCampaignPage() {
         </Tabs>
       </div>
 
-      <div className="pt-8 border-t border-gray-100">
-        <div className="text-sm text-gray-500">
+      <div className="pt-8 border-t border-border">
+        <div className="text-sm text-muted-foreground">
           Draft saved:{" "}
           {new Date().toLocaleTimeString("en-US", {
             hour: "2-digit",

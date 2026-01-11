@@ -7,13 +7,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 export function SettingsPanel() {
   return (
     <div className="space-y-8">
-      <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">CAMPAIGN SETTINGS</h2>
+      <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">CAMPAIGN SETTINGS</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-6">
           <div className="space-y-2">
             <Label className="text-sm font-medium">Campaign Priority</Label>
             <Select defaultValue="normal">
-              <SelectTrigger className="border-0 bg-gray-50 focus-visible:ring-0 focus-visible:ring-offset-0">
+              <SelectTrigger className="border-0 bg-muted focus-visible:ring-0 focus-visible:ring-offset-0">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -41,7 +41,7 @@ export function SettingsPanel() {
           <div className="space-y-2">
             <Label className="text-sm font-medium">Schedule</Label>
             <Select defaultValue="now">
-              <SelectTrigger className="border-0 bg-gray-50 focus-visible:ring-0 focus-visible:ring-offset-0">
+              <SelectTrigger className="border-0 bg-muted focus-visible:ring-0 focus-visible:ring-offset-0">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -52,8 +52,8 @@ export function SettingsPanel() {
           </div>
           <div className="space-y-2">
             <Label className="text-sm font-medium">Tags</Label>
-            <Input placeholder="Add tags (comma separated)" className="border-0 bg-gray-50 focus-visible:ring-0 focus-visible:ring-offset-0" />
-            <p className="text-sm text-gray-500">Help organize your campaigns</p>
+            <Input placeholder="Add tags (comma separated)" className="border-0 bg-muted focus-visible:ring-0 focus-visible:ring-offset-0" />
+            <p className="text-sm text-muted-foreground">Help organize your campaigns</p>
           </div>
         </div>
       </div>

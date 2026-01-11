@@ -33,13 +33,13 @@ export function SubscribersTable({ contacts, onDelete, isLoading = false }: Subs
   const getStatusBadge = (contact: Contact) => {
     if (contact.unsubscribed) {
       return (
-        <Badge variant="secondary" className="bg-red-100 text-red-700 border-red-200">
+        <Badge variant="secondary" className="border-red-500/30 bg-red-500/15 text-red-300">
           Unsubscribed
         </Badge>
       )
     } else {
       return (
-        <Badge variant="default" className="bg-green-100 text-green-700 border-green-200">
+        <Badge variant="default" className="border-emerald-500/30 bg-emerald-500/15 text-emerald-300">
           Active
         </Badge>
       )
@@ -51,14 +51,14 @@ export function SubscribersTable({ contacts, onDelete, isLoading = false }: Subs
       <div className="space-y-4">
         {[...Array(5)].map((_, i) => (
           <div key={i} className="flex items-center space-x-4 p-4 border rounded-lg animate-pulse">
-            <div className="h-10 w-10 bg-gray-200 rounded-full"></div>
+            <div className="h-10 w-10 bg-muted rounded-full"></div>
             <div className="flex-1 space-y-2">
-              <div className="h-4 bg-gray-200 rounded w-1/4"></div>
-              <div className="h-3 bg-gray-200 rounded w-1/3"></div>
+              <div className="h-4 bg-muted rounded w-1/4"></div>
+              <div className="h-3 bg-muted rounded w-1/3"></div>
             </div>
-            <div className="h-6 bg-gray-200 rounded w-20"></div>
-            <div className="h-6 bg-gray-200 rounded w-24"></div>
-            <div className="h-6 bg-gray-200 rounded w-16"></div>
+            <div className="h-6 bg-muted rounded w-20"></div>
+            <div className="h-6 bg-muted rounded w-24"></div>
+            <div className="h-6 bg-muted rounded w-16"></div>
           </div>
         ))}
       </div>
@@ -68,43 +68,43 @@ export function SubscribersTable({ contacts, onDelete, isLoading = false }: Subs
   if (contacts.length === 0) {
     return (
       <div className="text-center py-12">
-        <User className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-        <h3 className="text-lg font-medium text-gray-900 mb-2">No subscribers found</h3>
-        <p className="text-gray-500">Add your first subscriber to get started.</p>
+        <User className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+        <h3 className="text-lg font-medium text-foreground mb-2">No subscribers found</h3>
+        <p className="text-muted-foreground">Add your first subscriber to get started.</p>
       </div>
     )
   }
 
   return (
-    <div className="border rounded-lg overflow-hidden bg-white">
+    <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-card/60 shadow-lg shadow-black/10 backdrop-blur-sm">
       <Table>
         <TableHeader>
-          <TableRow className="bg-gray-50">
-            <TableHead className="font-semibold text-gray-700">Name</TableHead>
-            <TableHead className="font-semibold text-gray-700">Email</TableHead>
-            <TableHead className="font-semibold text-gray-700">Status</TableHead>
-            <TableHead className="font-semibold text-gray-700">Subscribed Date</TableHead>
-            <TableHead className="font-semibold text-gray-700">Source</TableHead>
+          <TableRow className="border-white/[0.06] bg-white/[0.03] hover:bg-white/[0.03]">
+            <TableHead className="font-semibold text-foreground">Name</TableHead>
+            <TableHead className="font-semibold text-foreground">Email</TableHead>
+            <TableHead className="font-semibold text-foreground">Status</TableHead>
+            <TableHead className="font-semibold text-foreground">Subscribed Date</TableHead>
+            <TableHead className="font-semibold text-foreground">Source</TableHead>
             <TableHead className="w-[50px]"></TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {contacts.map((contact) => (
-            <TableRow key={contact.id} className="hover:bg-gray-50 transition-colors">
+            <TableRow key={contact.id} className="border-white/[0.04] transition-colors hover:bg-white/[0.04]">
               <TableCell>
                 <div className="flex items-center space-x-3">
                   <div className="h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
                     <User className="h-4 w-4 text-blue-600" />
                   </div>
                                      <div>
-                     <div className="font-medium text-gray-900">{getContactName(contact)}</div>
+                     <div className="font-medium text-foreground">{getContactName(contact)}</div>
                    </div>
                 </div>
               </TableCell>
               <TableCell>
                 <div className="flex items-center space-x-2">
-                  <Mail className="h-4 w-4 text-gray-400" />
-                  <span className="text-gray-900">{contact.email}</span>
+                  <Mail className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-foreground">{contact.email}</span>
                 </div>
               </TableCell>
               <TableCell>
@@ -112,8 +112,8 @@ export function SubscribersTable({ contacts, onDelete, isLoading = false }: Subs
               </TableCell>
               <TableCell>
                 <div className="flex items-center space-x-2">
-                  <Calendar className="h-4 w-4 text-gray-400" />
-                  <span className="text-gray-900">
+                  <Calendar className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-foreground">
                     {new Date(contact.createdAt).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "short",
@@ -124,8 +124,8 @@ export function SubscribersTable({ contacts, onDelete, isLoading = false }: Subs
               </TableCell>
               <TableCell>
                 <div className="flex items-center space-x-2">
-                  <Database className="h-4 w-4 text-gray-400" />
-                  <Badge variant="outline" className="text-gray-600 border-gray-300">
+                  <Database className="h-4 w-4 text-muted-foreground" />
+                  <Badge variant="outline" className="text-muted-foreground border-border">
                     Resend
                   </Badge>
                 </div>

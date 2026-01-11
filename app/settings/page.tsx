@@ -81,7 +81,7 @@ export default function SettingsPage() {
       {/* Header */}
       <div className="space-y-4">
         <h1 className="text-4xl font-medium tracking-tight">Settings</h1>
-        <p className="text-lg text-gray-600 max-w-2xl">
+        <p className="text-lg text-muted-foreground max-w-2xl">
           Configure your Pulse application settings, email delivery, and privacy options to optimize your
           campaigns.
         </p>
@@ -90,14 +90,14 @@ export default function SettingsPage() {
           <Button 
             onClick={handleSaveSettings} 
             disabled={isLoading}
-            className="bg-black text-white hover:bg-gray-800 rounded-full px-6"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6"
           >
             {isLoading ? "Saving..." : "Save Settings"}
             <ArrowUpRight className="ml-2 h-4 w-4" />
           </Button>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-muted-foreground">
               {apiStatus === "connected" ? "All systems operational" : "Checking status..."}
             </span>
           </div>
@@ -106,7 +106,7 @@ export default function SettingsPage() {
 
       {/* API Configuration */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">API CONFIGURATION</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">API CONFIGURATION</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
@@ -120,9 +120,9 @@ export default function SettingsPage() {
                 placeholder="re_123456789..."
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
-                className="border-0 bg-gray-50 focus-visible:ring-0 focus-visible:ring-offset-0"
+                className="border-0 bg-muted focus-visible:ring-0 focus-visible:ring-offset-0"
               />
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-muted-foreground">
                 Get your API key from{" "}
                 <a
                   href="https://resend.com/api-keys"
@@ -177,7 +177,7 @@ export default function SettingsPage() {
 
       {/* Email Configuration */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">EMAIL CONFIGURATION</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">EMAIL CONFIGURATION</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
@@ -191,9 +191,9 @@ export default function SettingsPage() {
                 placeholder="Pulse@chris.tech"
                 value={fromEmail}
                 onChange={(e) => setFromEmail(e.target.value)}
-                className="border-0 bg-gray-50 focus-visible:ring-0 focus-visible:ring-offset-0"
+                className="border-0 bg-muted focus-visible:ring-0 focus-visible:ring-offset-0"
               />
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-muted-foreground">
                 This email will appear as the sender of your Pulses
               </p>
             </div>
@@ -210,9 +210,9 @@ export default function SettingsPage() {
                 placeholder="support@chris.tech"
                 value={replyToEmail}
                 onChange={(e) => setReplyToEmail(e.target.value)}
-                className="border-0 bg-gray-50 focus-visible:ring-0 focus-visible:ring-offset-0"
+                className="border-0 bg-muted focus-visible:ring-0 focus-visible:ring-offset-0"
               />
-              <p className="text-sm text-gray-500">Where replies will be sent</p>
+              <p className="text-sm text-muted-foreground">Where replies will be sent</p>
             </div>
           </div>
         </div>
@@ -220,13 +220,13 @@ export default function SettingsPage() {
 
       {/* General Settings */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">GENERAL SETTINGS</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">GENERAL SETTINGS</h2>
 
         <div className="space-y-8">
           <div className="flex items-center justify-between py-4">
             <div className="space-y-1">
               <div className="font-medium">Email Notifications</div>
-              <div className="text-sm text-gray-500">Receive notifications about campaign performance</div>
+              <div className="text-sm text-muted-foreground">Receive notifications about campaign performance</div>
             </div>
             <Switch defaultChecked />
           </div>
@@ -234,7 +234,7 @@ export default function SettingsPage() {
           <div className="flex items-center justify-between py-4">
             <div className="space-y-1">
               <div className="font-medium">Auto-save Drafts</div>
-              <div className="text-sm text-gray-500">Automatically save campaign drafts</div>
+              <div className="text-sm text-muted-foreground">Automatically save campaign drafts</div>
             </div>
             <Switch defaultChecked />
           </div>
@@ -242,7 +242,7 @@ export default function SettingsPage() {
           <div className="flex items-center justify-between py-4">
             <div className="space-y-1">
               <div className="font-medium">Analytics Tracking</div>
-              <div className="text-sm text-gray-500">Track email opens and clicks</div>
+              <div className="text-sm text-muted-foreground">Track email opens and clicks</div>
             </div>
             <Switch defaultChecked />
           </div>
@@ -251,14 +251,14 @@ export default function SettingsPage() {
 
       {/* Domain Settings */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">DOMAIN SETTINGS</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">DOMAIN SETTINGS</h2>
 
         <div className="space-y-6">
           <div className="space-y-2">
             <Label className="text-sm font-medium">Domain Status</Label>
             <div className="flex items-center gap-2">
               <Badge variant="secondary">Not configured</Badge>
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-muted-foreground">
                 Configure your domain in Resend dashboard
               </span>
             </div>
@@ -268,7 +268,7 @@ export default function SettingsPage() {
             Configure Domain
           </Button>
 
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             Configure your domain in the{" "}
             <a
               href="https://resend.com/domains"
@@ -284,8 +284,8 @@ export default function SettingsPage() {
       </div>
 
       {/* Footer */}
-      <div className="pt-8 border-t border-gray-100">
-        <div className="text-sm text-gray-500">
+      <div className="pt-8 border-t border-border">
+        <div className="text-sm text-muted-foreground">
           Last updated:{" "}
           {new Date().toLocaleTimeString("en-US", {
             hour: "2-digit",

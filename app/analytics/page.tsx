@@ -37,65 +37,65 @@ export default function AnalyticsPage() {
       {/* Header */}
       <div className="space-y-4">
         <h1 className="text-4xl font-medium tracking-tight">Analytics</h1>
-        <p className="text-lg text-gray-600 max-w-2xl">
+        <p className="text-lg text-muted-foreground max-w-2xl">
           Track your email campaign performance and deliverability with comprehensive insights into subscriber
           engagement and delivery metrics.
         </p>
 
         <div className="flex items-center gap-4 pt-4">
-          <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-6">
+          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
             Export Report
             <ArrowUpRight className="ml-2 h-4 w-4" />
           </Button>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">Updated 2 minutes ago</span>
+            <span className="text-sm text-muted-foreground">Updated 2 minutes ago</span>
           </div>
         </div>
       </div>
 
       {/* Key Metrics */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">KEY METRICS</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">KEY METRICS</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-2">
             <div className="text-3xl font-medium">89,247</div>
-            <div className="text-gray-600">Total Emails Sent</div>
+            <div className="text-muted-foreground">Total Emails Sent</div>
             <div className="flex items-center gap-1 text-sm">
               <TrendingUp className="h-3 w-3 text-green-600" />
               <span className="text-green-600">+12.3%</span>
-              <span className="text-gray-500">from last month</span>
+              <span className="text-muted-foreground">from last month</span>
             </div>
           </div>
 
           <div className="space-y-2">
             <div className="text-3xl font-medium">94.2%</div>
-            <div className="text-gray-600">Delivery Rate</div>
+            <div className="text-muted-foreground">Delivery Rate</div>
             <div className="flex items-center gap-1 text-sm">
               <TrendingUp className="h-3 w-3 text-green-600" />
               <span className="text-green-600">+0.8%</span>
-              <span className="text-gray-500">from last month</span>
+              <span className="text-muted-foreground">from last month</span>
             </div>
           </div>
 
           <div className="space-y-2">
             <div className="text-3xl font-medium">28.4%</div>
-            <div className="text-gray-600">Open Rate</div>
+            <div className="text-muted-foreground">Open Rate</div>
             <div className="flex items-center gap-1 text-sm">
               <TrendingUp className="h-3 w-3 text-green-600" />
               <span className="text-green-600">+2.1%</span>
-              <span className="text-gray-500">from last month</span>
+              <span className="text-muted-foreground">from last month</span>
             </div>
           </div>
 
           <div className="space-y-2">
             <div className="text-3xl font-medium">4.2%</div>
-            <div className="text-gray-600">Click Rate</div>
+            <div className="text-muted-foreground">Click Rate</div>
             <div className="flex items-center gap-1 text-sm">
               <TrendingDown className="h-3 w-3 text-red-600" />
               <span className="text-red-600">-0.3%</span>
-              <span className="text-gray-500">from last month</span>
+              <span className="text-muted-foreground">from last month</span>
             </div>
           </div>
         </div>
@@ -105,11 +105,11 @@ export default function AnalyticsPage() {
       <div className="space-y-8">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">EMAIL VOLUME</h2>
-            <p className="text-gray-600 mt-2">Monthly sending trends and delivery performance</p>
+            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">EMAIL VOLUME</h2>
+            <p className="text-muted-foreground mt-2">Monthly sending trends and delivery performance</p>
           </div>
           <Select defaultValue="6m">
-            <SelectTrigger className="w-32 border-0 bg-gray-50">
+            <SelectTrigger className="w-32 border-0 bg-muted">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -131,8 +131,8 @@ export default function AnalyticsPage() {
           >
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={emailVolumeData}>
-                <XAxis dataKey="month" axisLine={false} tickLine={false} className="text-xs text-gray-500" />
-                <YAxis axisLine={false} tickLine={false} className="text-xs text-gray-500" />
+                <XAxis dataKey="month" axisLine={false} tickLine={false} className="text-xs text-muted-foreground" />
+                <YAxis axisLine={false} tickLine={false} className="text-xs text-muted-foreground" />
                 <ChartTooltip content={<ChartTooltipContent />} />
                 <Area
                   type="monotone"
@@ -159,8 +159,8 @@ export default function AnalyticsPage() {
       {/* Engagement Trends */}
       <div className="space-y-8">
         <div>
-          <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">ENGAGEMENT</h2>
-          <p className="text-gray-600 mt-2">Open and click rates over time</p>
+          <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">ENGAGEMENT</h2>
+          <p className="text-muted-foreground mt-2">Open and click rates over time</p>
         </div>
 
         <div className="h-80">
@@ -173,8 +173,8 @@ export default function AnalyticsPage() {
           >
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={engagementData}>
-                <XAxis dataKey="date" axisLine={false} tickLine={false} className="text-xs text-gray-500" />
-                <YAxis axisLine={false} tickLine={false} className="text-xs text-gray-500" />
+                <XAxis dataKey="date" axisLine={false} tickLine={false} className="text-xs text-muted-foreground" />
+                <YAxis axisLine={false} tickLine={false} className="text-xs text-muted-foreground" />
                 <ChartTooltip content={<ChartTooltipContent />} />
                 <Line
                   type="monotone"
@@ -201,8 +201,8 @@ export default function AnalyticsPage() {
       {/* Deliverability */}
       <div className="space-y-8">
         <div>
-          <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">DELIVERABILITY</h2>
-          <p className="text-gray-600 mt-2">Email delivery status breakdown</p>
+          <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">DELIVERABILITY</h2>
+          <p className="text-muted-foreground mt-2">Email delivery status breakdown</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -236,7 +236,7 @@ export default function AnalyticsPage() {
                       if (active && payload && payload.length) {
                         const data = payload[0].payload
                         return (
-                          <div className="bg-white p-3 border border-gray-200 rounded-lg">
+                          <div className="bg-card p-3 border border-border rounded-lg">
                             <div className="font-medium">{data.name}</div>
                             <div className="text-2xl font-bold">{data.value}%</div>
                           </div>
@@ -267,8 +267,8 @@ export default function AnalyticsPage() {
       {/* Top Campaigns */}
       <div className="space-y-8">
         <div>
-          <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">TOP CAMPAIGNS</h2>
-          <p className="text-gray-600 mt-2">Best performing campaigns from the last 30 days</p>
+          <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">TOP CAMPAIGNS</h2>
+          <p className="text-muted-foreground mt-2">Best performing campaigns from the last 30 days</p>
         </div>
 
         <div className="space-y-6">
@@ -280,7 +280,7 @@ export default function AnalyticsPage() {
           ].map((campaign, index) => (
             <div key={campaign.name} className="flex items-center justify-between py-4">
               <div className="flex items-center gap-4">
-                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm font-medium">
+                <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-sm font-medium">
                   {index + 1}
                 </div>
                 <div className="font-medium">{campaign.name}</div>
@@ -288,15 +288,15 @@ export default function AnalyticsPage() {
               <div className="flex items-center gap-8 text-sm">
                 <div>
                   <div className="font-medium">{campaign.opens}</div>
-                  <div className="text-gray-500">Opens</div>
+                  <div className="text-muted-foreground">Opens</div>
                 </div>
                 <div>
                   <div className="font-medium">{campaign.clicks}</div>
-                  <div className="text-gray-500">Clicks</div>
+                  <div className="text-muted-foreground">Clicks</div>
                 </div>
                 <div>
                   <div className="font-medium">{campaign.revenue}</div>
-                  <div className="text-gray-500">Revenue</div>
+                  <div className="text-muted-foreground">Revenue</div>
                 </div>
               </div>
             </div>
@@ -305,8 +305,8 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Footer */}
-      <div className="pt-8 border-t border-gray-100">
-        <div className="text-sm text-gray-500">
+      <div className="pt-8 border-t border-border">
+        <div className="text-sm text-muted-foreground">
           Last updated:{" "}
           {new Date().toLocaleTimeString("en-US", {
             hour: "2-digit",

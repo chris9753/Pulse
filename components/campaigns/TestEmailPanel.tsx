@@ -14,7 +14,7 @@ interface Props {
 export function TestEmailPanel({ testEmail, setTestEmail, disabled, onSendTest }: Props) {
   return (
     <div className="space-y-6">
-      <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider">TEST EMAIL</h3>
+      <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">TEST EMAIL</h3>
       <div className="space-y-4">
         <div className="space-y-2">
           <Label className="text-sm font-medium">Test Recipients</Label>
@@ -22,11 +22,11 @@ export function TestEmailPanel({ testEmail, setTestEmail, disabled, onSendTest }
             placeholder="Enter email addresses"
             value={testEmail}
             onChange={(e) => setTestEmail(e.target.value)}
-            className="border-0 bg-gray-50 focus-visible:ring-0 focus-visible:ring-offset-0"
+            className="border-0 bg-muted focus-visible:ring-0 focus-visible:ring-offset-0"
           />
-          <p className="text-xs text-gray-500">Press Enter to add multiple recipients</p>
+          <p className="text-xs text-muted-foreground">Press Enter to add multiple recipients</p>
         </div>
-        <Button onClick={onSendTest} disabled={disabled} className="w-full bg-gray-900 hover:bg-gray-800 text-white">
+        <Button onClick={onSendTest} disabled={disabled} className="w-full bg-primary hover:bg-primary/90 text-white">
           Send Test Email
         </Button>
       </div>

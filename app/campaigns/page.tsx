@@ -37,7 +37,7 @@ export default function CampaignsPage() {
         return <Badge variant="secondary" className="bg-blue-100 text-blue-800">Scheduled</Badge>
       case "draft":
       default:
-        return <Badge variant="secondary" className="bg-gray-100 text-gray-700">Draft</Badge>
+        return <Badge variant="secondary" className="bg-muted text-foreground">Draft</Badge>
     }
   }
 
@@ -94,13 +94,13 @@ export default function CampaignsPage() {
     <div className="max-w-4xl mx-auto space-y-16 py-8 px-6">
       <div className="space-y-4">
         <h1 className="text-4xl font-medium tracking-tight">Campaigns</h1>
-        <p className="text-lg text-gray-600 max-w-2xl">
+        <p className="text-lg text-muted-foreground max-w-2xl">
           Create, manage, and track your Pulse campaigns. Monitor performance metrics and optimize your email
           marketing strategy.
         </p>
 
         <div className="flex items-center gap-4 pt-4">
-          <Button asChild className="bg-black text-white hover:bg-gray-800 rounded-full px-6">
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
             <Link href="/campaigns/new">
               New Campaign
               <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -108,7 +108,7 @@ export default function CampaignsPage() {
           </Button>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">{campaigns.length} campaigns this month</span>
+            <span className="text-sm text-muted-foreground">{campaigns.length} campaigns this month</span>
           </div>
         </div>
       </div>
@@ -123,36 +123,36 @@ export default function CampaignsPage() {
 
       {/* Quick Stats */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">PERFORMANCE</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">PERFORMANCE</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-2">
             <div className="text-3xl font-medium">27.2%</div>
-            <div className="text-gray-600">Average Open Rate</div>
+            <div className="text-muted-foreground">Average Open Rate</div>
             <div className="flex items-center gap-1 text-sm">
               <TrendingUp className="h-3 w-3 text-green-600" />
               <span className="text-green-600">+2.4%</span>
-              <span className="text-gray-500">from last month</span>
+              <span className="text-muted-foreground">from last month</span>
             </div>
           </div>
 
           <div className="space-y-2">
             <div className="text-3xl font-medium">3.9%</div>
-            <div className="text-gray-600">Average Click Rate</div>
+            <div className="text-muted-foreground">Average Click Rate</div>
             <div className="flex items-center gap-1 text-sm">
               <TrendingUp className="h-3 w-3 text-green-600" />
               <span className="text-green-600">+0.7%</span>
-              <span className="text-gray-500">from last month</span>
+              <span className="text-muted-foreground">from last month</span>
             </div>
           </div>
 
           <div className="space-y-2">
             <div className="text-3xl font-medium">$8,730</div>
-            <div className="text-gray-600">Total Revenue</div>
+            <div className="text-muted-foreground">Total Revenue</div>
             <div className="flex items-center gap-1 text-sm">
               <TrendingUp className="h-3 w-3 text-green-600" />
               <span className="text-green-600">+18.2%</span>
-              <span className="text-gray-500">from last month</span>
+              <span className="text-muted-foreground">from last month</span>
             </div>
           </div>
         </div>
@@ -160,34 +160,34 @@ export default function CampaignsPage() {
 
       {/* Campaigns Tabs */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">CAMPAIGNS</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">CAMPAIGNS</h2>
 
         <Tabs defaultValue="all" className="space-y-6">
           <TabsList className="grid w-full grid-cols-4 max-w-lg bg-transparent p-0 h-auto">
             <TabsTrigger
               value="all"
-              className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-sm data-[state=active]:border-black data-[state=active]:bg-black data-[state=active]:text-white bg-white"
+              className="flex items-center gap-2 px-4 py-2 border border-border rounded-xl data-[state=active]:border-transparent data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500/90 data-[state=active]:via-indigo-500/90 data-[state=active]:to-blue-500/90 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=active]:shadow-indigo-500/20 bg-white/[0.03]"
             >
               <Mail className="h-4 w-4" />
               All
             </TabsTrigger>
             <TabsTrigger
               value="sent"
-              className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-sm data-[state=active]:border-black data-[state=active]:bg-black data-[state=active]:text-white bg-white ml-2"
+              className="flex items-center gap-2 px-4 py-2 border border-border rounded-xl data-[state=active]:border-transparent data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500/90 data-[state=active]:via-indigo-500/90 data-[state=active]:to-blue-500/90 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=active]:shadow-indigo-500/20 bg-white/[0.03] ml-2"
             >
               <GrSend className="h-4 w-4" />
               Sent
             </TabsTrigger>
             <TabsTrigger
               value="drafts"
-              className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-sm data-[state=active]:border-black data-[state=active]:bg-black data-[state=active]:text-white bg-white ml-2"
+              className="flex items-center gap-2 px-4 py-2 border border-border rounded-xl data-[state=active]:border-transparent data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500/90 data-[state=active]:via-indigo-500/90 data-[state=active]:to-blue-500/90 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=active]:shadow-indigo-500/20 bg-white/[0.03] ml-2"
             >
               <Archive className="h-4 w-4" />
               Drafts
             </TabsTrigger>
             <TabsTrigger
               value="analytics"
-              className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-sm data-[state=active]:border-black data-[state=active]:bg-black data-[state=active]:text-white bg-white ml-2"
+              className="flex items-center gap-2 px-4 py-2 border border-border rounded-xl data-[state=active]:border-transparent data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500/90 data-[state=active]:via-indigo-500/90 data-[state=active]:to-blue-500/90 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=active]:shadow-indigo-500/20 bg-white/[0.03] ml-2"
             >
               <BarChart3 className="h-4 w-4" />
               Analytics
@@ -197,19 +197,19 @@ export default function CampaignsPage() {
           <TabsContent value="all" className="space-y-6">
             {campaigns.length === 0 ? (
               <div className="text-center py-12">
-                <PiMailboxDuotone className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-lg font-medium text-gray-900 mb-2">No campaigns</h3>
-                <p className="text-gray-600">Create your first campaign to get started</p>
+                <PiMailboxDuotone className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-foreground mb-2">No campaigns</h3>
+                <p className="text-muted-foreground">Create your first campaign to get started</p>
               </div>
             ) : (
               campaigns.map((campaign) => (
                 <div
                   key={campaign.id}
-                  className="flex items-center justify-between py-6 border-b border-gray-100 last:border-b-0"
+                  className="flex items-center justify-between py-6 border-b border-border last:border-b-0"
                 >
                   <div className="space-y-2">
                     <div className="font-medium text-lg">{campaign.title}</div>
-                    <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       {getStatusBadge(campaign.status)}
                       {campaign.sentDate && (
                         <span>
@@ -229,16 +229,16 @@ export default function CampaignsPage() {
                     {campaign.openRate && (
                       <div className="text-right">
                         <div className="font-medium text-lg">{campaign.openRate}%</div>
-                        <div className="text-gray-500">Opens</div>
+                        <div className="text-muted-foreground">Opens</div>
                       </div>
                     )}
                     {campaign.clickRate && (
                       <div className="text-right">
                         <div className="font-medium text-lg">{campaign.clickRate}%</div>
-                        <div className="text-gray-500">Clicks</div>
+                        <div className="text-muted-foreground">Clicks</div>
                       </div>
                     )}
-                    {!campaign.openRate && !campaign.clickRate && <div className="text-gray-400">Draft</div>}
+                    {!campaign.openRate && !campaign.clickRate && <div className="text-muted-foreground">Draft</div>}
                   </div>
                 </div>
               ))
@@ -250,11 +250,11 @@ export default function CampaignsPage() {
               sentCampaigns.map((campaign) => (
                 <div
                   key={campaign.id}
-                  className="flex items-center justify-between py-6 border-b border-gray-100 last:border-b-0"
+                  className="flex items-center justify-between py-6 border-b border-border last:border-b-0"
                 >
                   <div className="space-y-2">
                     <div className="font-medium text-lg">{campaign.title}</div>
-                    <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <Badge className="bg-green-100 text-green-700">sent</Badge>
                       <span>
                         Sent{" "}
@@ -271,20 +271,20 @@ export default function CampaignsPage() {
                   <div className="flex items-center gap-8 text-sm">
                     <div className="text-right">
                       <div className="font-medium text-lg">{campaign.openRate}%</div>
-                      <div className="text-gray-500">Opens</div>
+                      <div className="text-muted-foreground">Opens</div>
                     </div>
                     <div className="text-right">
                       <div className="font-medium text-lg">{campaign.clickRate}%</div>
-                      <div className="text-gray-500">Clicks</div>
+                      <div className="text-muted-foreground">Clicks</div>
                     </div>
                   </div>
                 </div>
               ))
             ) : (
               <div className="text-center py-12">
-                <GrSend className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-lg font-medium text-gray-900 mb-2">No sent campaigns</h3>
-                <p className="text-gray-600">Your sent campaigns will appear here</p>
+                <GrSend className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-foreground mb-2">No sent campaigns</h3>
+                <p className="text-muted-foreground">Your sent campaigns will appear here</p>
               </div>
             )}
           </TabsContent>
@@ -294,33 +294,33 @@ export default function CampaignsPage() {
               draftCampaigns.map((campaign) => (
                 <div
                   key={campaign.id}
-                  className="flex items-center justify-between py-6 border-b border-gray-100 last:border-b-0"
+                  className="flex items-center justify-between py-6 border-b border-border last:border-b-0"
                 >
                   <div className="space-y-2">
                     <div className="font-medium text-lg">{campaign.title}</div>
-                    <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <Badge variant="secondary">draft</Badge>
                       <span>Not sent yet</span>
                     </div>
                   </div>
-                  <div className="text-gray-400">Draft</div>
+                  <div className="text-muted-foreground">Draft</div>
                 </div>
               ))
             ) : (
               <div className="text-center py-12">
-                <Archive className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-lg font-medium text-gray-900 mb-2">No drafts</h3>
-                <p className="text-gray-600">All your campaigns have been sent</p>
+                <Archive className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-foreground mb-2">No drafts</h3>
+                <p className="text-muted-foreground">All your campaigns have been sent</p>
               </div>
             )}
           </TabsContent>
 
           <TabsContent value="analytics" className="space-y-6">
             <div className="text-center py-12">
-              <BarChart3 className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Campaign Analytics</h3>
-              <p className="text-gray-600">Detailed performance metrics for your campaigns</p>
-              <Button asChild className="mt-4 bg-black text-white hover:bg-gray-800">
+              <BarChart3 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-lg font-medium text-foreground mb-2">Campaign Analytics</h3>
+              <p className="text-muted-foreground">Detailed performance metrics for your campaigns</p>
+              <Button asChild className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90">
                 <Link href="/analytics">View Full Analytics</Link>
               </Button>
             </div>
@@ -329,8 +329,8 @@ export default function CampaignsPage() {
       </div>
 
       {/* Footer */}
-      <div className="pt-8 border-t border-gray-100">
-        <div className="text-sm text-gray-500">
+      <div className="pt-8 border-t border-border">
+        <div className="text-sm text-muted-foreground">
           Last updated:{" "}
           {new Date().toLocaleTimeString("en-US", {
             hour: "2-digit",

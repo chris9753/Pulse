@@ -67,7 +67,13 @@ const config: Config = {
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			sm: 'calc(var(--radius) - 4px)',
+  			xl: 'calc(var(--radius) + 4px)',
+  			'2xl': 'calc(var(--radius) + 8px)',
+  		},
+  		boxShadow: {
+  			glow: '0 0 40px -8px hsl(252 78% 62% / 0.35)',
+  			'glow-sm': '0 0 24px -6px hsl(252 78% 62% / 0.25)',
   		},
   		keyframes: {
   			'accordion-down': {

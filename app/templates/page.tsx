@@ -51,13 +51,13 @@ export default function TemplatesPage() {
       {/* Header */}
       <div className="space-y-4">
         <h1 className="text-4xl font-medium tracking-tight">Email Templates</h1>
-        <p className="text-lg text-gray-600 max-w-2xl">
+        <p className="text-lg text-muted-foreground max-w-2xl">
           Create beautiful, responsive email templates that engage your subscribers. Choose from our collection or build
           your own custom designs.
         </p>
 
         <div className="flex items-center gap-4 pt-4">
-          <Button asChild className="bg-black text-white hover:bg-gray-800 rounded-full px-6">
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
             <Link href="/templates/new">
               New Template
               <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -65,14 +65,14 @@ export default function TemplatesPage() {
           </Button>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">{templates.length} templates available</span>
+            <span className="text-sm text-muted-foreground">{templates.length} templates available</span>
           </div>
         </div>
       </div>
 
       {/* Categories */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">CATEGORIES</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">CATEGORIES</h2>
 
         <div className="flex gap-2">
           {categories.map((category) => (
@@ -81,8 +81,8 @@ export default function TemplatesPage() {
               onClick={() => setCategoryFilter(category === "All" ? "all" : category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 (category === "All" && categoryFilter === "all") || category === categoryFilter 
-                  ? "bg-black text-white" 
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  ? "bg-primary text-primary-foreground" 
+                  : "bg-muted text-muted-foreground hover:bg-muted"
               }`}
             >
               {category}
@@ -93,12 +93,12 @@ export default function TemplatesPage() {
 
       {/* Templates Grid */}
       <div className="space-y-8">
-        <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">ALL TEMPLATES</h2>
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">ALL TEMPLATES</h2>
 
         {templates.length === 0 && !loading && (
           <div className="text-center py-12">
-            <div className="text-gray-500 mb-4">No templates yet</div>
-            <Button asChild className="bg-black text-white hover:bg-gray-800 rounded-full px-6">
+            <div className="text-muted-foreground mb-4">No templates yet</div>
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
               <Link href="/templates/new">
                 Create Your First Template
                 <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -109,7 +109,7 @@ export default function TemplatesPage() {
 
         {templates.length > 0 && filteredTemplates.length === 0 && (
           <div className="text-center py-12">
-            <div className="text-gray-500 mb-4">No templates found</div>
+            <div className="text-muted-foreground mb-4">No templates found</div>
             <div className="flex gap-2 justify-center">
               <Button variant="outline" onClick={() => setSearchTerm("")}>
                 Clear Search
@@ -126,7 +126,7 @@ export default function TemplatesPage() {
             {filteredTemplates.map((template) => (
               <div key={template.id} className="space-y-4">
                 {/* Template Preview */}
-                <div className="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden">
+                <div className="aspect-[4/3] bg-muted rounded-lg overflow-hidden">
                   {template.previewImage ? (
                     <img
                       src={template.previewImage}
@@ -135,7 +135,7 @@ export default function TemplatesPage() {
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-gray-400 text-sm">No preview</div>
+                      <div className="text-muted-foreground text-sm">No preview</div>
                     </div>
                   )}
                 </div>
@@ -145,14 +145,14 @@ export default function TemplatesPage() {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <h3 className="text-lg font-medium">{template.name}</h3>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">
+                      <span className="px-2 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full">
                         {template.category}
                       </span>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">{template.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{template.description}</p>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs text-gray-500">
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span>
                       Modified{" "}
                       {new Date(template.updatedAt || template.createdAt).toLocaleDateString("en-US", {
@@ -174,7 +174,7 @@ export default function TemplatesPage() {
                     </Button>
                     <Button 
                       size="sm"
-                      className="flex-1 bg-black text-white hover:bg-gray-800 text-xs"
+                      className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 text-xs"
                       onClick={() => handleUseTemplate(template)}
                     >
                       Use Template
@@ -188,8 +188,8 @@ export default function TemplatesPage() {
       </div>
 
       {/* Footer */}
-      <div className="pt-8 border-t border-gray-100">
-        <div className="text-sm text-gray-500">
+      <div className="pt-8 border-t border-border">
+        <div className="text-sm text-muted-foreground">
           Last updated:{" "}
           {new Date().toLocaleTimeString("en-US", {
             hour: "2-digit",
@@ -216,52 +216,52 @@ function TemplatesLoading() {
     <div className="max-w-4xl mx-auto space-y-16 py-8 px-6">
       {/* Header */}
       <div className="space-y-4">
-        <div className="h-10 bg-gray-200 rounded w-80"></div>
-        <div className="h-6 bg-gray-200 rounded w-96"></div>
+        <div className="h-10 bg-muted rounded w-80"></div>
+        <div className="h-6 bg-muted rounded w-96"></div>
         <div className="flex items-center gap-4 pt-4">
-          <div className="h-10 bg-gray-200 rounded-full w-32"></div>
+          <div className="h-10 bg-muted rounded-full w-32"></div>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-gray-200 rounded-full"></div>
-            <div className="h-4 bg-gray-200 rounded w-32"></div>
+            <div className="w-2 h-2 bg-muted rounded-full"></div>
+            <div className="h-4 bg-muted rounded w-32"></div>
           </div>
         </div>
       </div>
 
       {/* Categories */}
       <div className="space-y-8">
-        <div className="h-4 bg-gray-200 rounded w-24"></div>
+        <div className="h-4 bg-muted rounded w-24"></div>
         <div className="flex gap-2">
           {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="h-8 bg-gray-200 rounded-full w-20"></div>
+            <div key={i} className="h-8 bg-muted rounded-full w-20"></div>
           ))}
         </div>
       </div>
 
       {/* Templates Grid */}
       <div className="space-y-8">
-        <div className="h-4 bg-gray-200 rounded w-28"></div>
+        <div className="h-4 bg-muted rounded w-28"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {Array.from({ length: 4 }).map((_, i) => (
             <div key={i} className="space-y-4">
-              <div className="aspect-[4/3] bg-gray-200 rounded-lg flex items-center justify-center">
-                <div className="w-8 h-8 bg-gray-300 rounded"></div>
+              <div className="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-muted rounded"></div>
               </div>
               <div className="space-y-3">
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <div className="h-5 bg-gray-200 rounded w-32"></div>
-                    <div className="h-5 bg-gray-200 rounded w-20"></div>
+                    <div className="h-5 bg-muted rounded w-32"></div>
+                    <div className="h-5 bg-muted rounded w-20"></div>
                   </div>
-                  <div className="h-3 bg-gray-200 rounded w-full"></div>
-                  <div className="h-3 bg-gray-200 rounded w-3/4"></div>
+                  <div className="h-3 bg-muted rounded w-full"></div>
+                  <div className="h-3 bg-muted rounded w-3/4"></div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <div className="h-3 bg-gray-200 rounded w-24"></div>
-                  <div className="h-3 bg-gray-200 rounded w-20"></div>
+                  <div className="h-3 bg-muted rounded w-24"></div>
+                  <div className="h-3 bg-muted rounded w-20"></div>
                 </div>
                 <div className="flex gap-2">
-                  <div className="h-8 bg-gray-200 rounded flex-1"></div>
-                  <div className="h-8 bg-gray-200 rounded flex-1"></div>
+                  <div className="h-8 bg-muted rounded flex-1"></div>
+                  <div className="h-8 bg-muted rounded flex-1"></div>
                 </div>
               </div>
             </div>
@@ -270,8 +270,8 @@ function TemplatesLoading() {
       </div>
 
       {/* Footer */}
-      <div className="pt-8 border-t border-gray-100">
-        <div className="h-4 bg-gray-200 rounded w-32"></div>
+      <div className="pt-8 border-t border-border">
+        <div className="h-4 bg-muted rounded w-32"></div>
       </div>
     </div>
   )

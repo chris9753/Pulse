@@ -148,17 +148,17 @@ export function EmailBuilder({
 
   return (
     <div className={className}>
-      <div className={isFullscreen ? "fixed inset-4 z-50 bg-white border rounded-lg shadow-lg" : "border rounded-lg bg-white"}>
+      <div className={isFullscreen ? "fixed inset-4 z-50 bg-card border rounded-lg shadow-lg" : "border rounded-lg bg-card"}>
         <div className={`p-4 border-b ${isFullscreen ? "" : ""}`}>
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-semibold">Email Editor</h3>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-muted-foreground mt-1">
                 Drag and drop elements to create your email template. Use the toolbar on the left to add content blocks.
                 <span className="text-blue-600 ml-2">Saves to your browser's local storage - click Save to preserve your work</span>
               </p>
               {saveStatus && (
-                <p className="text-xs text-gray-500 mt-1">{saveStatus}</p>
+                <p className="text-xs text-muted-foreground mt-1">{saveStatus}</p>
               )}
             </div>
             <div className="flex items-center gap-2">
@@ -255,8 +255,8 @@ export function EmailBuilder({
           ) : (
             <div className="flex items-center justify-center h-full">
               <div className="text-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto mb-4"></div>
-                <p className="text-gray-600">Loading email editor...</p>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+                <p className="text-muted-foreground">Loading email editor...</p>
               </div>
             </div>
           )}
@@ -272,22 +272,22 @@ export function EmailBuilder({
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
-            <div className="border border-gray-200 rounded-lg bg-white">
-              <div className="border-b border-gray-100 p-4">
-                <div className="font-medium text-gray-900">Email Preview</div>
-                <div className="text-gray-500 text-xs mt-1">Generated HTML</div>
+            <div className="border border-border rounded-lg bg-card">
+              <div className="border-b border-border p-4">
+                <div className="font-medium text-foreground">Email Preview</div>
+                <div className="text-muted-foreground text-xs mt-1">Generated HTML</div>
               </div>
               <div className="p-6">
                 <div
-                  className="prose prose-lg max-w-none text-gray-900"
+                  className="prose prose-lg prose-invert max-w-none"
                   dangerouslySetInnerHTML={{ __html: previewHtml }}
                 />
               </div>
             </div>
             <div className="space-y-2">
-              <h4 className="font-medium text-gray-900">HTML Code</h4>
-              <div className="bg-gray-50 rounded-lg p-4">
-                <pre className="text-sm text-gray-700 overflow-x-auto">
+              <h4 className="font-medium text-foreground">HTML Code</h4>
+              <div className="bg-muted rounded-lg p-4">
+                <pre className="text-sm text-foreground overflow-x-auto">
                   <code>{previewHtml}</code>
                 </pre>
               </div>

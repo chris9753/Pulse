@@ -14,13 +14,13 @@ interface TemplateCardProps {
 
 export function TemplateCard({ template, onEdit, onDelete, onUse }: TemplateCardProps) {
   return (
-    <Card className="border border-gray-200 rounded-lg bg-white transition-colors hover:bg-gray-50">
+    <Card className="border border-border rounded-lg bg-card transition-colors hover:bg-muted/50">
       <CardHeader className="pb-2">
         <CardTitle className="text-base font-semibold">{template.name}</CardTitle>
         <CardDescription className="text-xs">{template.description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
+        <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
           <span>{template.category}</span>
           <span>Used {template.usage} times</span>
         </div>

@@ -32,7 +32,7 @@ export default function CampaignsLoading() {
         <Skeleton className="h-4 w-24" />
         <div className="space-y-6">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="flex items-center justify-between py-6 border-b border-gray-100 last:border-b-0">
+            <div key={i} className="flex items-center justify-between py-6 border-b border-border last:border-b-0">
               <div className="space-y-2">
                 <Skeleton className="h-6 w-64" />
                 <Skeleton className="h-4 w-48" />
@@ -47,7 +47,7 @@ export default function CampaignsLoading() {
       </div>
 
       {/* Footer */}
-      <div className="pt-8 border-t border-gray-100">
+      <div className="pt-8 border-t border-border">
         <Skeleton className="h-4 w-48" />
       </div>
     </div>

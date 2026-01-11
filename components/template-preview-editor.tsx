@@ -172,14 +172,14 @@ export function TemplatePreviewEditor({ template, onSave, onCancel, loading = fa
                 <div className="space-y-2">
                   <Label htmlFor="category">Editor Type</Label>
                   <div className="flex items-center space-x-2">
-                    <Type className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm text-gray-600">Rich Text</span>
+                    <Type className="h-4 w-4 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">Rich Text</span>
                     <Switch
                       checked={isHtml}
                       onCheckedChange={setIsHtml}
                     />
-                    <Code className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm text-gray-600">Raw HTML</span>
+                    <Code className="h-4 w-4 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">Raw HTML</span>
                   </div>
                 </div>
               </CardContent>
@@ -209,7 +209,7 @@ export function TemplatePreviewEditor({ template, onSave, onCancel, loading = fa
                       onChange={(e) => setContent(e.target.value)}
                       className="min-h-[400px] font-mono text-sm"
                     />
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-muted-foreground">
                       Write your complete HTML email template. You can use variables like {"{{name}}"} which will be replaced automatically.
                     </p>
                   </div>
@@ -220,7 +220,7 @@ export function TemplatePreviewEditor({ template, onSave, onCancel, loading = fa
                       onContentChange={(html) => setContent(html)}
                       className="w-full"
                     />
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-muted-foreground">
                       Use the drag-and-drop editor to create your email template. Variables like {"{{name}}"} will be replaced automatically.
                     </p>
                   </div>
@@ -265,28 +265,28 @@ export function TemplatePreviewEditor({ template, onSave, onCancel, loading = fa
             </CardHeader>
             <CardContent className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Category:</span>
+                <span className="text-sm text-muted-foreground">Category:</span>
                 <Badge variant="outline">{template.category}</Badge>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Created:</span>
-                <span className="text-sm text-gray-900">
+                <span className="text-sm text-muted-foreground">Created:</span>
+                <span className="text-sm text-foreground">
                   {new Date(template.createdAt).toLocaleDateString()}
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Last Modified:</span>
-                <span className="text-sm text-gray-900">
+                <span className="text-sm text-muted-foreground">Last Modified:</span>
+                <span className="text-sm text-foreground">
                   {new Date(template.updatedAt).toLocaleDateString()}
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Usage:</span>
-                <span className="text-sm text-gray-900">{template.usage} times</span>
+                <span className="text-sm text-muted-foreground">Usage:</span>
+                <span className="text-sm text-foreground">{template.usage} times</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Type:</span>
-                <span className="text-sm text-gray-900">
+                <span className="text-sm text-muted-foreground">Type:</span>
+                <span className="text-sm text-foreground">
                   {template.isHtml ? "Raw HTML" : "Rich Text"}
                 </span>
               </div>
@@ -302,19 +302,19 @@ export function TemplatePreviewEditor({ template, onSave, onCancel, loading = fa
               <CardDescription>How your template will appear in emails</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="border border-gray-200 rounded-lg bg-white">
-                <div className="border-b border-gray-100 p-4">
-                  <div className="font-medium text-gray-900">{template.name}</div>
-                  <div className="text-gray-500 text-xs mt-1">from Pulse@chris.tech</div>
+              <div className="border border-border rounded-lg bg-card">
+                <div className="border-b border-border p-4">
+                  <div className="font-medium text-foreground">{template.name}</div>
+                  <div className="text-muted-foreground text-xs mt-1">from Pulse@chris.tech</div>
                 </div>
                 <div className="p-6">
                   {getPreviewContent() ? (
                     <div
-                      className="prose prose-lg max-w-none text-gray-900"
+                      className="prose prose-lg prose-invert max-w-none"
                       dangerouslySetInnerHTML={{ __html: getPreviewContent() }}
                     />
                   ) : (
-                    <p className="text-gray-500 italic">No content available...</p>
+                    <p className="text-muted-foreground italic">No content available...</p>
                   )}
                 </div>
               </div>
